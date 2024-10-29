@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen UF1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .subtitulo {
+            padding: 10px;   
+            background-color: #007bff; 
+            color: #fff;
+            border-radius: 5px; 
+            text-align: center; 
+            margin: 10px;   
+        }
+        .contenedor {
+            max-width: 1700px; 
+            background-color: #ffffff; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px; 
+            margin: 20px auto; 
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center text-primary">Comparador de Cotxes Potents de 2022</h1>
+   
+
+    <div class="container-fluid">
+        <div class="card contenedor">
+        <div class="subtitulo"><h2>Tarjeta de coches</h2></div>
+
+        <div class="row justify-content-center"> 
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro0">
+                    <div class="card-body">
+                        <h5 class="card-title" id="nombreCarro0">Card title</h5>
+                        <p class="card-text" id="potenciaCarro0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p id="motorCarro0">asdasdasdas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"> 
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro1">
+                    <div class="card-body">
+                        <h5 class="card-title" id="nombreCarro1">Card title</h5>
+                        <p class="card-text" id="potenciaCarro1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p id="motorCarro1">asdasdasdas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"> 
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro2">
+                    <div class="card-body">
+                        <h5 class="card-title" id="nombreCarro2">Card title</h5>
+                        <p class="card-text" id="potenciaCarro2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p id="motorCarro2">asdasdasdas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center"> 
+            <div class="col-md-3"> 
+                <div class="card">
+                    <img class="card-img-top" id="imagenCarro3" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="nombreCarro3">Card title</h5>
+                        <p class="card-text" id="potenciaCarro3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p id="motorCarro3">asdasdasdas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"> 
+                <div class="card">
+                    <img class="card-img-top" id="imagenCarro4" src="..." alt="Card image cap" style="height: 150px;">
+                    <div class="card-body">
+                        <h5 class="card-title" id="nombreCarro4">Card title</h5>
+                        <p class="card-text" id="potenciaCarro4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p id="motorCarro4">asdasdasdas</p>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <br>
+        <div class="contenedor">
+            <div class="subtitulo"><h2>Comparacio de cotxes</h2></div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <select class="form-select" id="carro1">
+                    <option selected>Selecciona un cotxe</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="carro2">
+                    <option selected>Selecciona un cotxe</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="text-center mb-3">
+            <button class="btn btn-primary" id="compareButton">Comparar</button>
+            <div class="error-message" id="compareError"></div>
+        </div>
+
+        <br>
+    </div>
+       <div class="contenedor">
+        <div class="subtitulo"><h2>Cerca de Potència</h2></div>
+        
+        <div class="row mb-3 justify-content-center">
+            <div class="col-md-4">
+                <input type="number" class="form-control" id="powerInput" placeholder="Potència en CV">
+                <div class="error-message" id="powerError"></div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-secondary" id="searchButton">Cerca</button>
+            </div>
+        </div>
+        <div id="powerResults" class="mt-3"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
