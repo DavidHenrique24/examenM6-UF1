@@ -41,9 +41,9 @@
                     <div class="card">
                         <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro0">
                         <div class="card-body">
-                            <h5 class="card-title" id="nombreCarro0">Card title</h5>
-                            <p class="card-text" id="potenciaCarro0">Texto descriptivo del coche.</p>
-                            <p id="motorCarro0">Motor info</p>
+                            <h5 class="card-title" id="nombreCarro0"></h5>
+                            <p class="card-text" id="potenciaCarro0"></p>
+                            <p id="motorCarro0"></p>
                         </div>
                     </div>
                 </div>
@@ -51,9 +51,9 @@
                     <div class="card">
                         <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro1">
                         <div class="card-body">
-                            <h5 class="card-title" id="nombreCarro1">Card title</h5>
-                            <p class="card-text" id="potenciaCarro1">Texto descriptivo del coche.</p>
-                            <p id="motorCarro1">Motor info</p>
+                            <h5 class="card-title" id="nombreCarro1"></h5>
+                            <p class="card-text" id="potenciaCarro1"></p>
+                            <p id="motorCarro1"></p>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         <div class="card-body">
                             <h5 class="card-title" id="nombreCarro2">Card title</h5>
                             <p class="card-text" id="potenciaCarro2">Texto descriptivo del coche.</p>
-                            <p id="motorCarro2">Motor info</p>
+                            <p id="motorCarro2"></p>
                         </div>
                     </div>
                 </div>
@@ -75,8 +75,8 @@
                         <img class="card-img-top" id="imagenCarro3" src="..." alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title" id="nombreCarro3">Card title</h5>
-                            <p class="card-text" id="potenciaCarro3">Texto descriptivo del coche.</p>
-                            <p id="motorCarro3">Motor info</p>
+                            <p class="card-text" id="potenciaCarro3"></p>
+                            <p id="motorCarro3">/p>
                         </div>
                     </div>
                 </div>
@@ -84,9 +84,9 @@
                     <div class="card">
                         <img class="card-img-top" id="imagenCarro4" src="..." alt="Card image cap" style="height: 265px;">
                         <div class="card-body">
-                            <h5 class="card-title" id="nombreCarro4">Card title</h5>
-                            <p class="card-text" id="potenciaCarro4">Texto descriptivo del coche.</p>
-                            <p id="motorCarro4">Motor info</p>
+                            <h5 class="card-title" id="nombreCarro4"></h5>
+                            <p class="card-text" id="potenciaCarro4"></p>
+                            <p id="motorCarro4"></p>
                         </div>
                     </div>
                 </div>
@@ -252,10 +252,10 @@ document.querySelector('#comparar').addEventListener('click', function () {
 // Busqueda
 document.querySelector('#buscar').addEventListener('click', function () {
     // Recoge el número introducido
-    let infoError = parseInt(document.querySelector('#buscarInput').value);
+    let numeroInfo = parseInt(document.querySelector('#buscarInput').value);
     
     // Control de errores
-    if (infoError <= 0 || infoError > 1900) { // muestra error si el numero es muy alto
+    if (numeroInfo <= 0 || numeroInfo > 1900) { // muestra error si el numero es muy alto o muy bajo
         alert("error introduce otra cantidad");
     }
 
@@ -265,7 +265,7 @@ document.querySelector('#buscar').addEventListener('click', function () {
     // Comprueba las potencias y las muestra
     for (let i = 0; i < carro.length; i++) {
         // Comparación con cada coche en el array
-        if (infoError < parseInt(carro[i].potencia)) { 
+        if (numeroInfo < parseInt(carro[i].potencia)) {   //parseint para convertirlo de texto a numero
             document.querySelector('#busquedaUl').innerHTML += `<li>${carro[i].nombre} - ${carro[i].potencia}</li>`;
         }
     }
