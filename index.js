@@ -1,3 +1,4 @@
+// Array de coches
 let carro = [
     {
         nombre: "Bugatti Chiron Super Sport 300+",
@@ -31,13 +32,56 @@ let carro = [
     }
 ];
 
-for (i=0 ; i<5; i++){
-    document.querySelector(`#imagenCarro${i}`).src = carro[i].foto
-    document.querySelector(`#nombreCarro${i}`).innerHTML = carro[i].nombre
-    document.querySelector(`#potenciaCarro${i}`).innerHTML =carro[i].potencia 
-    document.querySelector(`#motorCarro${i}`).innerHTML = carro[i].motor
-    
+// Cargar datos en las tarjeta
+for (let i = 0; i < carro.length; i++) {
+    document.querySelector(`#imagenCarro${i}`).src = carro[i].foto;
+    document.querySelector(`#nombreCarro${i}`).innerHTML = carro[i].nombre;
+    document.querySelector(`#potenciaCarro${i}`).innerHTML = carro[i].potencia;
+    document.querySelector(`#motorCarro${i}`).innerHTML = carro[i].motor;
 
-
-
+   
+    document.querySelector(`#tablaIzq${i}`).innerHTML = carro[i].nombre;
+    document.querySelector(`#tablaDer${i}`).innerHTML = carro[i].nombre;
 }
+
+// Comparación de coches
+document.querySelector('#comparar').addEventListener('click', function () {
+    let cocheIzq = document.querySelector('#select1').value;
+    let cocheDere = document.querySelector('#select2').value;
+
+    // Control de errores 
+    if (cocheIzq === cocheDere) {
+        alert("Error al seleccionar");
+    }else {
+        // Pone los nombres, potencias y motores de los coches seleccionados
+        document.querySelector('#compararNombre1').innerHTML = carro[cocheIzq].nombre;
+        document.querySelector('#compararNombre2').innerHTML = carro[cocheDere].nombre;
+        document.querySelector('#compararPotencia1').innerHTML = carro[cocheIzq].potencia;
+        document.querySelector('#compararPotencia2').innerHTML = carro[cocheDere].potencia;
+        document.querySelector('#compararMotor1').innerHTML = carro[cocheIzq].motor;
+        document.querySelector('#compararMotor2').innerHTML = carro[cocheDere].motor;
+
+    }
+});
+
+// Busqueda
+document.querySelector('#buscar').addEventListener('click', function () {
+    // Recoge el número introducido
+    let infoError = parseInt(document.querySelector('#buscarInput').value);
+    
+    // Control de errores
+    if (infoError <= 0 || infoError > 1900) { // muestra error si el numero es muy alto
+        alert("error introduce otra cantidad");
+    }
+
+    // Limpiar la lista de resultados antes de añadir nuevos
+    document.querySelector('#busquedaUl').innerHTML = '';
+
+    // Comprueba las potencias y las muestra
+    for (let i = 0; i < carro.length; i++) {
+        // Comparación con cada coche en el array
+        if (infoError < parseInt(carro[i].potencia)) { 
+            document.querySelector('#busquedaUl').innerHTML += `<li>${carro[i].nombre} - ${carro[i].potencia}</li>`;
+        }
+    }
+});
